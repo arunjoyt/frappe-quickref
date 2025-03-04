@@ -17,3 +17,27 @@ frappe.ui.form.on('Item Price', {
 		}
 	}
 })
+
+// item-custom-button
+frappe.ui.form.on('Item', {
+	refresh(frm) {
+		frm.add_custom_button(
+		    __("Item Price"), function() {
+		        frappe.route_options = {
+		            item_code:frm.doc.item_code
+		        };
+		        frappe.set_route("item-price");
+		    },
+		    __('Info')
+		    );
+		frm.add_custom_button(
+		    __("Item Report"), function() {
+		        frappe.route_options = {
+		            item_code:frm.doc.item_code
+		        };
+		        frappe.set_route("item", "view", "report");
+		    },
+		    __('Info')
+		    );
+	}
+})
