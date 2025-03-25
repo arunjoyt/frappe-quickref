@@ -76,3 +76,9 @@ frappe.ui.form.on('Student Registration', {
     }
 })
 
+// How to fetch logged in user and set that to a field in the doctype.
+frappe.ui.form.on('Event Registration', {
+    refresh: function(frm) {
+        frm.set_value('logged_in_user', frappe.session.user_fullname);
+    }
+});
