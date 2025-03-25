@@ -31,3 +31,25 @@
 </div>
 
 <hr>
+
+<!-- Another example -->
+From,<br>
+{{ doc.company }}<br><br>
+
+To<br>
+{{doc.applicant_name}}<br><br>
+
+
+Hello {{doc.applicant_name}},<br>
+{{doc.introduction}}
+<br>
+Please join us on {{doc.appointment_date}}.<br>
+{% for term in doc.terms %}
+<br>{{term.title}},{{term.description}}
+{% endfor %}
+
+<br><br><br>
+Your {{ doc.terms[0]['title'] }} is {{ doc.terms[0]['description'] }}
+<br>
+You will be working in {{ doc.terms[1]['title'] }} of {{ doc.terms[1]['description'] }}
+
