@@ -82,3 +82,16 @@ frappe.ui.form.on('Event Registration', {
         frm.set_value('logged_in_user', frappe.session.user_fullname);
     }
 });
+
+// How to add calender view to list view.
+// In this example adding calendar view to "Delivery Note"
+frappe.views.calendar["Delivery Note"] = {
+	field_map: {
+		"start": "posting_date",
+		"end": "posting_date",
+		"id": "name",
+		"title": "customer",
+		"allDay": "allDay",
+		"progress": "progress"
+	}
+};
